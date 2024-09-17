@@ -3,28 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redeem Code Roll</title>
+    <title>Hangout Drop's Website</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-
-    <!-- Roll Section -->
     <div class="container">
-        <h1>Roll and Get Your Code!</h1>
-        <div class="roll-section">
-            <div id="roll-button" onclick="startRoll()">ROLL</div>
-            <div id="result-message" class="result-message"></div>
-        </div>
+        <header>
+            <h1>Hangout Drop's Website</h1>
+            <p>Your Ultimate Lucky Code Generator!</p>
+        </header>
+
+        <main>
+            <section class="about">
+                <h2>About Us</h2>
+                <p>Welcome to Hangout Drop's Website! We offer a fun and interactive way to get lucky codes. Simply roll the dice to see if you're one of the lucky ones. Remember, luck is only a roll away!</p>
+                <p>If you receive a redeem code, please visit our <a href="https://discord.gg/PpbfYz2yaB" target="_blank">Discord Server</a> and type <code>$redeem your_code</code> in the Free Generator channel.</p>
+            </section>
+
+            <section class="roll-section">
+                <button id="roll-button">ROLL</button>
+                <div id="result-message" class="result-message"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Powered by <a href="https://discord.gg/PpbfYz2yaB" target="_blank">Hangout Drops</a></p>
+            <!-- Google AdSense -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9085220476124481"
+                    crossorigin="anonymous"></script>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </footer>
+
+        <!-- Confetti Canvas -->
+        <canvas id="confetti-canvas"></canvas>
     </div>
-
-    <!-- Confetti Canvas -->
-    <canvas id="confetti-canvas"></canvas>
-
-    <!-- Google AdSense (Paste your AdSense code here) -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9085220476124481"
-         crossorigin="anonymous"></script>
-
 </body>
-                                   </html>
-                                   
+</html>
