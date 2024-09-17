@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1f1f1f, #383838);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #00FF00;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #00FF00;
+}
+
+.roll-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#roll-button {
+    background-color: #0f0f0f;
+    border: 2px solid #00FF00;
+    color: #00FF00;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#roll-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(0, 255, 0, 1);
+}
+
+.result-message {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #ff4747;
+    min-height: 30px;
+}
+
+@keyframes confetti {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    pointer-events: none;
+  }
