@@ -1,12 +1,7 @@
 let redeemCodes = [];
 
-// Fetch redeem codes from private GitHub repository
-fetch('https://api.github.com/repos/your-github-username/your-repo-name/contents/redeem.txt', {
-    headers: {
-        'Authorization': 'token YOUR_GITHUB_TOKEN',
-        'Accept': 'application/vnd.github.v3.raw' // This ensures you get the raw file content
-    }
-})
+// Load redeem codes from redeem.txt
+fetch('redeem.txt')
     .then(response => response.text())
     .then(data => {
         redeemCodes = data.split('\n').map(code => code.trim()).filter(Boolean); // Split by line and remove empty lines
@@ -24,7 +19,7 @@ function startRoll() {
     // Rolling animation (text moving)
     resultMessage.innerHTML = "Rolling...";
     setTimeout(() => {
-        let isLucky = Math.random() > 0.5; // 50% chance of luck
+        let isLucky = Math.random() < 0.1; // 10% chance of luck
 
         if (isLucky && redeemCodes.length > 0) {
             // Pick a random redeem code
@@ -46,6 +41,11 @@ function startRoll() {
             rollButton.disabled = false;
             rollButton.style.pointerEvents = 'auto';
         }, 3000);
+
+        // Show ads every 2 rolls
+        if (Math.random() < 0.5) {
+            showAd();
+        }
 
     }, 2000); // 2 seconds delay for the rolling effect
 }
@@ -103,5 +103,13 @@ function showConfetti() {
         drawConfetti();
         requestAnimationFrame(loop);
     })();
-      }
-              
+}
+
+// Display an ad
+function showAd() {
+    // Here you could implement an ad display logic or use an existing ad library
+    alert("Ad goes here! (This is a placeholder)");
+}
+
+// Add event listener to roll button
+document.getElementById('roll-button').addEventListener('click', startRoll);
